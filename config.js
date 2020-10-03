@@ -1,4 +1,4 @@
 module.exports = {
-    uploadPath: 'token-logo/',
-    jsonPath: __dirname + '/main.json'
+    uploadPath: '/home/eqwitydex-frontend/token-logo/',
+    jsonPath: '/home/eqwitydex-frontend/config/main.json'
 }
