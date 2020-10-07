@@ -16,6 +16,19 @@ router.get("/tokens", (req, res) => {
 });
 
 router.post("/tokens", (req, res) => {
+
+  if(!req.body.tokens && !req.body.length) {
+    return res.send({
+      success: false,
+      error: "empty_data",
+    });
+  }
+
+  // convert decimals to int
+  for(let i = 0; i < req.body.tokens.length; i++) {
+    req.body.tokens[i].decimals = parseInt(req.body.tokens[i].decimals); 
+  }
+
   // read file
   try {
     var rawdata = fs.readFileSync(jsonPath);
